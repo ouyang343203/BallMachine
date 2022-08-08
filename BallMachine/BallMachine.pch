@@ -1,0 +1,30 @@
+//
+//  BallMachine.pch
+//  BallMachine
+//
+//  Created by 李佛军 on 2022/5/17.
+//
+
+#ifndef BallMachine_pch
+#define BallMachine_pch
+
+/*
+ * 注释该行-为SIT环境 注释environment(测试环境-内网)、0(测试环境-外网)、1(生产环境)
+ */
+//#define environment  0
+
+#ifndef environment
+
+#define Version_URL @"http://192.168.101.3:8888/" //测试环境-内网
+
+#elif environment == 0
+
+#define Version_URL @"http://183.62.118.51:10088/" //测试环境-外网
+
+#else
+
+#define Version_URL @"" //生产环境
+
+#endif
+#define AppPackageByCondition @"app/resource/getTheNewestIssueAppPackageByCondition"//版本更新
+#endif
