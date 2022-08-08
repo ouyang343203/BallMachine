@@ -1,6 +1,0 @@
-framework module CSIIJSBridge {
-  umbrella header "CSIIJSBridge.h"
-
-  export *
-  module * { export * }
-}
