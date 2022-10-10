@@ -31,18 +31,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
     self.window.backgroundColor = [UIColor whiteColor];
-
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil];
-    
     self.window.rootViewController = [storyboard instantiateInitialViewController];
-
     [[VersionUpdateManager manager] checkingTheLatestVersionUpgrade];
-
     [self.window makeKeyAndVisible];
     return YES;
 }
+
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     [application setApplicationIconBadgeNumber:0];
     // 版本升级检测
