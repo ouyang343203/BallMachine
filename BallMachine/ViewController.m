@@ -22,7 +22,7 @@
 -(void)loadProject {
     NSDictionary *navagation = @{
                                @"titleColor":[UIColor blackColor],
-                               @"titleStr":@"项目",
+                               @"titleStr":@"",
                                @"left_back_icon":@"back"};
     NSDictionary *Dic = @{
                          @"area":@"广东省深圳市",

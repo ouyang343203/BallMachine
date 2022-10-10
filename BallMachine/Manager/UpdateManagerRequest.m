@@ -24,11 +24,11 @@
     NSString *appPackageUrl = [NSString stringWithFormat:@"%@%@",Version_URL,AppPackageByCondition];
     NSLog(@"appPackageUrl-----%@",appPackageUrl);
     [[CSIIRequestManager manager]requestWithType:requestTypePost withUrl:appPackageUrl params:dic success:^(id  _Nonnull response) {
-            success(response);
-            NSLog(@"response-----%@",response);
-        } failure:^(NSError * _Nonnull error) {
-            failure(error);
-            NSLog(@"NSError-----%@",error);
-        }];
+        success(response);
+        NSLog(@"response-----%@",response);
+    } failure:^(NSError * _Nonnull error) {
+        failure(error);
+        NSLog(@"NSError-----%@",error);
+    }];
 }
 @end

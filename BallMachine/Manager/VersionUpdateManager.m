@@ -15,8 +15,7 @@
 
 @end
 @implementation VersionUpdateManager
-+ (instancetype)manager
-{
++ (instancetype)manager {
     static VersionUpdateManager *manager;
     static dispatch_once_t onceToken;
      dispatch_once(&onceToken, ^{
@@ -25,26 +24,25 @@
      return manager;
 }
 //检查新版本升级
--(void)checkingTheLatestVersionUpgrade
-{
+-(void)checkingTheLatestVersionUpgrade {
     [[UpdateManagerRequest manager] updateRequest:^(id  _Nonnull response) {
-            NSDictionary *dicton = (NSDictionary*)response;
+        NSDictionary *dicton = (NSDictionary*)response;
 
-                 if ([dicton[@"code"] isEqual:@"200"]) {
-                     NSString *updateMessage =  dicton[@"data"][@"versionName"];
-                     if ([otherTool compareVesionWithServerVersion:updateMessage]) {
-                         NSString *resourceUrl = dicton[@"data"][@"resourceUrl"];
-                         NSString *upgradeMessage = dicton[@"data"][@"upgradeMessage"];
-                         [self showCustomAlertView:upgradeMessage resourceUrl:resourceUrl];
-                     }
-                     
+             if ([dicton[@"code"] isEqual:@"200"]) {
+                 NSString *updateMessage =  dicton[@"data"][@"versionName"];
+                 if ([otherTool compareVesionWithServerVersion:updateMessage]) {
+                     NSString *resourceUrl = dicton[@"data"][@"resourceUrl"];
+                     NSString *upgradeMessage = dicton[@"data"][@"upgradeMessage"];
+                     [self showCustomAlertView:upgradeMessage resourceUrl:resourceUrl];
                  }
-        } failure:^(NSError * _Nonnull error) {
-            NSLog(@"NSError-----%@",error);
-        }];
+                 
+             }
+    } failure:^(NSError * _Nonnull error) {
+        NSLog(@"NSError-----%@",error);
+    }];
 }
--(void)showCustomAlertView:(NSString*)message resourceUrl:(NSString*)openUrl
-{
+
+-(void)showCustomAlertView:(NSString*)message resourceUrl:(NSString*)openUrl {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"发现新版本" message:message preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *defaultR = [UIAlertAction actionWithTitle:@"升级" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -69,8 +67,8 @@
      
     [bgVC presentViewController:alertController animated:YES completion:nil];
 }
--(UIWindow*)updateWindow
-{
+
+-(UIWindow*)updateWindow {
     if (!_updateWindow) {
         _updateWindow =  [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         _updateWindow.backgroundColor = [UIColor clearColor];
@@ -78,8 +76,8 @@
     }
     return _updateWindow;
 }
--(void)removeWindow
-{
+
+-(void)removeWindow {
     UIViewController *VC = self.updateWindow.rootViewController;
     [VC removeFromParentViewController];
     self.updateWindow.rootViewController = nil;
