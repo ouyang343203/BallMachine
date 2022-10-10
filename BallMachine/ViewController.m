@@ -31,6 +31,6 @@
                           @"versionNumber":@"0.0.1",
                           @"navagation":navagation,
     };
-    [[PluginUpdateManager shareManager]startH5ViewControllerWithNebulaParams:Dic];
+    [[PluginUpdateManager shareManager] startH5ViewControllerWithNebulaParams:Dic withController:self];
 }
 @end
