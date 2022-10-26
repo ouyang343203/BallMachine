@@ -28,7 +28,7 @@
                                @"titleStr":@"",
                                @"left_back_icon":@"back"};
     NSDictionary *Dic = @{
-                         @"area":@"广东省深圳市",
+                          @"area":@"广东省深圳市",
                           @"name":@"BallMachine",
                           @"systemType":@"0",
                           @"versionNumber":@"0.0.1",

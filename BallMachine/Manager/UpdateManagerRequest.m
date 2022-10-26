@@ -6,8 +6,7 @@
 #import "CSIIRequestManager.h"
 #import "otherTool.h"
 @implementation UpdateManagerRequest
-+ (instancetype)manager
-{
++ (instancetype)manager {
     static UpdateManagerRequest *manager;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -15,8 +14,8 @@
     });
     return manager;
 }
--(void)updateRequest:(void(^)(id response))success failure:(void(^)(NSError *error))failure
-{
+
+-(void)updateRequest:(void(^)(id response))success failure:(void(^)(NSError *error))failure {
     NSDictionary *dic = @{
                           @"versionNumber":[otherTool getCurrentVersion],
                           @"systemType":@"1",
