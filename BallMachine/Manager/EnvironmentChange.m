@@ -172,7 +172,7 @@ static BOOL isClose;
     skipButton.layer.cornerRadius = 30;
     skipButton.layer.masksToBounds = YES;
     skipButton.titleLabel.font = [UIFont systemFontOfSize:18.5];
-   // [skipButton addTarget:self action:@selector(skipAction) forControlEvents:UIControlEventTouchUpInside];
+    [skipButton addTarget:self action:@selector(skipAction) forControlEvents:UIControlEventTouchUpInside];
     [environVC.view addSubview:skipButton];
     [EnvironmentChange openCountdown:skipButton];
 }
