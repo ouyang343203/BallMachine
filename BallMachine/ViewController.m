@@ -20,6 +20,7 @@
     self.view.backgroundColor = kCSIIRGBHex(0x1F1F27);
     [self loadProject];
     NSLog(@"postUrl = %@", [PluginUpdateManager shareManager].postUrl);
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 }
 
 -(void)loadProject {

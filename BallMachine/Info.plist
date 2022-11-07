@@ -13,5 +13,7 @@
 		<string>bluetooth-peripheral</string>
 		<string>fetch</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>
