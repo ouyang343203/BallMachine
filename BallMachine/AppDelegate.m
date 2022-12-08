@@ -47,12 +47,5 @@
     [[VersionUpdateManager manager] checkingTheLatestVersionUpgrade];
 }
 #pragma mark 静态离线包初始化
-//-(void)initStaticPackage
-//{
-//    [PluginUpdateManager shareManager].postUrl = @"http://183.62.118.51:10088/app/resource/getTheNewestIssueStaticPackageDetailByCondition";
-//     [PluginUpdateManager shareManager].projectId =@"145";
-//    [PluginUpdateManager shareManager].domainName = @"http://183.62.118.51:18091";
-//
-//}
 
 @end
